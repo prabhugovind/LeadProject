@@ -41,18 +41,16 @@ public class MergeTestCase extends Wrapper
 	    
 	    Alert a = driver.switchTo().alert();
 	    a.accept();
+	    
 	    Thread.sleep(2000);
 	    clickByXpath("//a[@href='/crmsfa/control/findLeads']");
 	    Thread.sleep(1000);
+	    
 	    entertextByxpath("//input[@name='id']",(ReadFromExcel("./data/TC4.xlsx/", 1,4)));
-	    clickByXpath("//button[@class='x-btn-text']");
+	    
+	    clickByXpath("//em[@unselectable='on']/button");
+	    Thread.sleep(1000);
 	    verifyTextByXpath("/div[@class='x-paging-info']", "No records to display");
-	    
-	    
-	    
-	    
-	    
-	    
 	    
 }
 }
